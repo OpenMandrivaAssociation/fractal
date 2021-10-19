@@ -62,4 +62,4 @@ free software projects.
 %{_datadir}/icons/hicolor/*/apps/org.gnome.Fractal*.*
 %{_datadir}/glib-2.0/schemas/org.gnome.Fractal.gschema.xml
 
-%files lang -f %{name}.lang
+#files lang -f %{name}.lang
