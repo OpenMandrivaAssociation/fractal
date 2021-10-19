@@ -1,12 +1,12 @@
-
 Name:           fractal
-Version:        4.4.0
-Release:        0
-Summary:        Matrix group messaging app
-License:        GPL-3.0-or-later
-Group:          Productivity/Networking/Instant Messenger
+Version:        4.4.1b1
+Release:        1
+Summary:        GTK+ client for Matrix written in Rust
+License:        GPL-3.0
+Group:          Networking/Instant Messenger
 URL:            https://wiki.gnome.org/Apps/Fractal
-Source0:        https://gitlab.gnome.org/GNOME/fractal/uploads/d4168ac40fd681240964705e000dd353/%{name}-%{version}.tar.xz
+Source0:        https://gitlab.gnome.org/GNOME/fractal/-/archive/%{version}/%{name}-%{version}.tar.bz2
+
 BuildRequires:  cargo
 BuildRequires:  gmp-devel
 BuildRequires:  meson
@@ -38,30 +38,14 @@ BuildRequires:  pkgconfig(pango) >= 1.34
 BuildRequires:  pkgconfig(pangocairo) >= 1.34
 
 %description
-Fractal is a Matrix messaging app for GNOME written in Rust. Its
+Fractal is a Matrix messaging app for GNOME written in GTK+ and Rust. Its
 interface is tuned for collaboration in large groups, such as
 free software projects.
-
-%lang_package
 
 %prep
 %autosetup -p1
 
 %build
-# bypass error https://bugzilla.opensuse.org/show_bug.cgi?id=1175502
-# to avoid cargo reported error if config.guess has been changed
-# by build macro.
-%ifarch ppc64le
-guessname='src/libbacktrace/config.guess'
-cfgguess="./vendor/backtrace-sys/$guessname"
-chkjson='./vendor/backtrace-sys/.cargo-checksum.json'
-if [[ -f $cfgguess ]] && [[ -f $chkjson ]]; then
-  chksum=`sha256sum $cfgguess |sed -e 's/ .*//'`
-  grep -q $guessname $chkjson && grep -q $chksum $chkjson || sed -i -e "s#\($guessname.:.\)[0-9a-f]*#\1$chksum#" $chkjson
-fi
-%endif
-
-%define _lto_cflags %{nil}
 %meson
 %meson_build
 
