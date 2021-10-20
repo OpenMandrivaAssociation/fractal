@@ -1,9 +1,11 @@
---- meson.build.orig	2019-02-03 12:56:37 UTC
-+++ meson.build
-@@ -4,7 +4,6 @@ project(
-   license: 'GPLv3',
+diff -uraN fractal-4.4.1/meson.build omv-fractal-4.4.1/meson.build
+--- fractal-4.4.1/meson.build	2021-10-18 12:42:06.741971000 +0200
++++ omv-fractal-4.4.1/meson.build	2021-10-20 18:13:13.137739928 +0200
+@@ -4,7 +4,6 @@
+   license: 'GPL-3.0-or-later',
  )
-
+ 
 -dependency('openssl', version: '>= 1.0')
  dependency('dbus-1')
- dependency('libsecret-1')
+ 
+ dependency('glib-2.0', version: '>= 2.56')
