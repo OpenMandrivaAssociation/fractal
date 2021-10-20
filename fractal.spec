@@ -6,6 +6,7 @@ License:        GPL-3.0
 Group:          Networking/Instant Messenger
 URL:            https://wiki.gnome.org/Apps/Fractal
 Source0:        https://gitlab.gnome.org/GNOME/fractal/-/archive/%{version}/%{name}-%{version}.tar.xz
+Patch0:         patch-meson.build
 
 BuildRequires:  cargo
 BuildRequires:  gmp-devel
