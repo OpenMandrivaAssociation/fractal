@@ -1,11 +1,11 @@
 Name:           fractal
-Version:        4.4.1b1
+Version:        4.4.1
 Release:        1
 Summary:        GTK+ client for Matrix written in Rust
 License:        GPL-3.0
 Group:          Networking/Instant Messenger
 URL:            https://wiki.gnome.org/Apps/Fractal
-Source0:        https://gitlab.gnome.org/GNOME/fractal/-/archive/%{version}/%{name}-%{version}.tar.bz2
+Source0:        https://gitlab.gnome.org/GNOME/fractal/-/archive/%{version}/%{name}-%{version}.tar.xz
 
 BuildRequires:  cargo
 BuildRequires:  gmp-devel
