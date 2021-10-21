@@ -6,13 +6,15 @@ License:        GPL-3.0
 Group:          Networking/Instant Messenger
 URL:            https://wiki.gnome.org/Apps/Fractal
 Source0:        https://gitlab.gnome.org/GNOME/fractal/-/archive/%{version}/%{name}-%{version}.tar.xz
-Patch0:         patch-meson.build
 
-BuildRequires:  cargo
+BuildRequires:	rust-packaging
+BuildRequires:	rust
+BuildRequires:	rust-src
+BuildRequires:	cargo
+BuildRequires:	cargo-c
 BuildRequires:  gmp-devel
 BuildRequires:  meson
 BuildRequires:  pkgconfig
-BuildRequires:  rust
 BuildRequires:  pkgconfig(atk) >= 2.4
 BuildRequires:  pkgconfig(cairo) >= 1.10
 BuildRequires:  pkgconfig(dbus-1)
@@ -47,11 +49,10 @@ free software projects.
 %autosetup -p1
 
 %build
-%meson
-%meson_build
+cargo build
 
 %install
-%meson_install
+%cargo_install
 %find_lang %{name} %{?no_lang_C}
 
 %files
