@@ -6,6 +6,7 @@ License:        GPL-3.0
 Group:          Networking/Instant Messenger
 URL:            https://wiki.gnome.org/Apps/Fractal
 Source0:        https://gitlab.gnome.org/GNOME/fractal/-/archive/%{version}/%{name}-%{version}.tar.xz
+Source1:        vendor.tar.xz
 
 BuildRequires:	rust-packaging
 BuildRequires:	rust
@@ -36,7 +37,7 @@ BuildRequires:  pkgconfig(gtk+-3.0)  >= 3.22
 BuildRequires:  pkgconfig(gtksourceview-4) >= 4.0
 BuildRequires:  pkgconfig(libhandy-1)
 BuildRequires:  pkgconfig(libsecret-1)
-#BuildRequires:  pkgconfig(openssl)
+BuildRequires:  pkgconfig(openssl)
 BuildRequires:  pkgconfig(pango) >= 1.34
 BuildRequires:  pkgconfig(pangocairo) >= 1.34
 
@@ -47,6 +48,8 @@ free software projects.
 
 %prep
 %autosetup -p1
+tar -xf %{SOURCE1} -C %{_builddir}
+%define cargo_registry %{_builddir}/vendor
 
 %build
 cargo build
