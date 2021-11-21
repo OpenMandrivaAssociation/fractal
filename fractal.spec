@@ -7,6 +7,11 @@ Group:          Networking/Instant Messenger
 URL:            https://wiki.gnome.org/Apps/Fractal
 Source0:        https://gitlab.gnome.org/GNOME/fractal/-/archive/%{version}/%{name}-%{version}.tar.bz2
 
+# By default Fractal use rust crates that support only openssl v1 and not v3. While OpenMandriva provide devel only for v3.
+# So let's force update few crates to latest that support openssl v3.
+# Issue: https://gitlab.gnome.org/GNOME/fractal/-/issues/847
+Patch0:         fix-build-with-new-openssl3-openmandriva-patch
+
 BuildRequires:  cargo
 BuildRequires:  gmp-devel
 BuildRequires:  meson
@@ -53,7 +58,7 @@ free software projects.
 %meson_install
 %find_lang %{name} %{?no_lang_C}
 
-%files
+%files -f %{name}.lang
 %license LICENSE.txt
 %doc README.md
 %{_bindir}/%{name}
@@ -61,5 +66,4 @@ free software projects.
 %{_datadir}/applications/org.gnome.Fractal.desktop
 %{_datadir}/icons/hicolor/*/apps/org.gnome.Fractal*.*
 %{_datadir}/glib-2.0/schemas/org.gnome.Fractal.gschema.xml
-
-#files lang -f %{name}.lang
+%{_datadir}/fractal/resources.gresource
