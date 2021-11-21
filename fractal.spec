@@ -10,7 +10,7 @@ Source0:        https://gitlab.gnome.org/GNOME/fractal/-/archive/%{version}/%{na
 # By default Fractal use rust crates that support only openssl v1 and not v3. While OpenMandriva provide devel only for v3.
 # So let's force update few crates to latest that support openssl v3.
 # Issue: https://gitlab.gnome.org/GNOME/fractal/-/issues/847
-Patch0:         fix-build-with-new-openssl3-openmandriva-patch
+Patch0:         fix-build-with-new-openssl3-openmandriva.patch
 
 BuildRequires:  cargo
 BuildRequires:  gmp-devel
