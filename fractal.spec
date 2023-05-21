@@ -35,7 +35,7 @@ BuildRequires:  pkgconfig(gstreamer-plugins-bad-1.0)
 BuildRequires:  pkgconfig(gstreamer-plugins-base-1.0)
 BuildRequires:  pkgconfig(gstreamer-video-1.0)
 BuildRequires:  pkgconfig(gtk+-3.0)  >= 3.22
-BuildRequires:  pkgconfig(gtksourceview-4) >= 4.0
+BuildRequires:  pkgconfig(gtksourceview-5)
 BuildRequires:  pkgconfig(libhandy-1)
 BuildRequires:  pkgconfig(libsecret-1)
 BuildRequires:  pkgconfig(openssl)
