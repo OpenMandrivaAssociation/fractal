@@ -46,6 +46,7 @@ BuildRequires:  pkgconfig(libpipewire-0.3)
 BuildRequires:  pkgconfig(shumate-1.0)
 BuildRequires:  pkgconfig(xdg-desktop-portal)
 BuildRequires:  cmake(LLVM)
+BuildRequires:	cmake(Clang)
 
 %description
 Fractal is a Matrix messaging app for GNOME written in GTK+ and Rust. Its
