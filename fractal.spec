@@ -12,11 +12,11 @@ Source0:        https://gitlab.gnome.org/GNOME/fractal/-/archive/%{version}/%{na
 # Issue: https://gitlab.gnome.org/GNOME/fractal/-/issues/847
 #Patch0:         fix-build-with-new-openssl3-openmandriva.patch
 
-BuildRequires:  cargo
+BuildRequires:  cargo = 1.69.0-1
 BuildRequires:  gmp-devel
 BuildRequires:  meson
 BuildRequires:  pkgconfig
-BuildRequires:  rust
+BuildRequires:  rust = 1.69.0-1
 BuildRequires:  pkgconfig(atk) >= 2.4
 BuildRequires:  pkgconfig(cairo) >= 1.10
 BuildRequires:  pkgconfig(dbus-1)
