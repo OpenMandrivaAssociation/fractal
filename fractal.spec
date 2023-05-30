@@ -65,7 +65,7 @@ free software projects.
 %find_lang %{name} %{?no_lang_C}
 
 %files -f %{name}.lang
-%license LICENSE.txt
+%license LICENSE*
 %doc README.md
 %{_bindir}/%{name}
 %{_datadir}/metainfo/org.gnome.Fractal.metainfo.xml
