@@ -1,5 +1,5 @@
 Name:           fractal
-Version:        5.beta2
+Version:        5.rc1
 Release:        1
 Summary:        GTK+ client for Matrix written in Rust
 License:        GPL-3.0
