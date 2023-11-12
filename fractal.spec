@@ -8,7 +8,7 @@ License:        GPL-3.0
 Group:          Networking/Instant Messenger
 URL:            https://wiki.gnome.org/Apps/Fractal
 #Source0:        https://gitlab.gnome.org/GNOME/fractal/-/archive/%{version}/%{name}-%{version}.tar.bz2
-Source0:        Source0:        https://gitlab.gnome.org/GNOME/fractal/-/package_files/409/download#/fractal-%{tarball_version}.tar.xz
+Source0:        https://gitlab.gnome.org/GNOME/fractal/-/package_files/409/download#/fractal-%{tarball_version}.tar.xz
 
 # By default Fractal use rust crates that support only openssl v1 and not v3. While OpenMandriva provide devel only for v3.
 # So let's force update few crates to latest that support openssl v3.
@@ -76,3 +76,4 @@ free software projects.
 %{_datadir}/icons/hicolor/*/apps/org.gnome.Fractal*.*
 %{_datadir}/glib-2.0/schemas/org.gnome.Fractal.gschema.xml
 %{_datadir}/fractal/resources.gresource
+%{_datadir}/fractal/ui-resources.gresource
