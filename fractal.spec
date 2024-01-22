@@ -18,6 +18,7 @@ Source0:        https://gitlab.gnome.org/World/fractal/-/releases/%{version}/dow
 BuildRequires:  cargo
 BuildRequires:  gmp-devel
 BuildRequires:  meson
+BuildRequires:  gettext
 BuildRequires:  pkgconfig
 BuildRequires:  rust
 BuildRequires:  pkgconfig(atk) >= 2.4
