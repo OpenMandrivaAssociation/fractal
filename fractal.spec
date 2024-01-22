@@ -78,3 +78,4 @@ free software projects.
 %{_datadir}/glib-2.0/schemas/org.gnome.Fractal.gschema.xml
 %{_datadir}/fractal/resources.gresource
 %{_datadir}/fractal/ui-resources.gresource
+%{_datadir}/dbus-1/services/org.gnome.Fractal.service
