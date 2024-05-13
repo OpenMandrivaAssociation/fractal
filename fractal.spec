@@ -9,6 +9,8 @@ Group:          Networking/Instant Messenger
 URL:            https://wiki.gnome.org/Apps/Fractal
 Source0:        https://gitlab.gnome.org/GNOME/fractal/-/archive/%{version}/%{name}-%{version}.tar.bz2
 #Source0:        https://gitlab.gnome.org/World/fractal/-/releases/%{version}/downloads/tarball/fractal-%{version}.tar.xz
+# Use vendor. Fractal developers should decide - they shipping tarball with vendored crates or not, and not just like now one release without and another with again again...
+# Stop this madness.
 Source1:        vendor.tar.xz
 
 # By default Fractal use rust crates that support only openssl v1 and not v3. While OpenMandriva provide devel only for v3.
