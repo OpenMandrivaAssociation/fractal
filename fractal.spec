@@ -1,7 +1,7 @@
 %global tarball_version %%(echo %{version} | tr '~' '.')
 
 Name:           fractal
-Version:        7
+Version:        8
 Release:        1
 Summary:        GTK+ client for Matrix written in Rust
 License:        GPL-3.0
