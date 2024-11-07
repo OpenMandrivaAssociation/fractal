@@ -47,7 +47,7 @@ BuildRequires:  pkgconfig(libadwaita-1)
 BuildRequires:  pkgconfig(libhandy-1)
 BuildRequires:  pkgconfig(libsecret-1)
 BuildRequires:  pkgconfig(libwebp)
-BuildRequires:  pkgcongih(lcms2)
+BuildRequires:  pkgcongig(lcms2)
 BuildRequires:  pkgconfig(openssl)
 BuildRequires:  pkgconfig(pango) >= 1.34
 BuildRequires:  pkgconfig(pangocairo) >= 1.34
