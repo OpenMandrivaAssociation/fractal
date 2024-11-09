@@ -1,7 +1,7 @@
 %global tarball_version %%(echo %{version} | tr '~' '.')
 
 Name:           fractal
-Version:        8
+Version:        9
 Release:        1
 Summary:        GTK+ client for Matrix written in Rust
 License:        GPL-3.0
@@ -10,7 +10,7 @@ URL:            https://wiki.gnome.org/Apps/Fractal
 Source0:        https://gitlab.gnome.org/GNOME/fractal/-/archive/%{version}/%{name}-%{version}.tar.bz2
 #Source0:        https://gitlab.gnome.org/World/fractal/-/releases/%{version}/downloads/tarball/fractal-%{version}.tar.xz
 # Use vendor. Fractal developers should decide - they shipping tarball with vendored crates or not, and not just like now one release without and another with again again...
-# Stop this madness.
+# Stop this madness. Also distributing rust packages and their dependencies is complete madness, and there is a need to provide vendor instead of linking to regular libraries like in any other civilized language. STOP THIS MADNESS
 Source1:        vendor.tar.xz
 
 # By default Fractal use rust crates that support only openssl v1 and not v3. While OpenMandriva provide devel only for v3.
@@ -45,7 +45,10 @@ BuildRequires:  pkgconfig(gtk4)
 BuildRequires:  pkgconfig(gtksourceview-5)
 BuildRequires:  pkgconfig(libadwaita-1)
 BuildRequires:  pkgconfig(libhandy-1)
+BuildRequires:  pkgconfig(libseccomp)
 BuildRequires:  pkgconfig(libsecret-1)
+BuildRequires:  pkgconfig(libwebp)
+BuildRequires:  pkgconfig(lcms2)
 BuildRequires:  pkgconfig(openssl)
 BuildRequires:  pkgconfig(pango) >= 1.34
 BuildRequires:  pkgconfig(pangocairo) >= 1.34
