@@ -18,6 +18,7 @@ Source1:        vendor.tar.xz
 # Issue: https://gitlab.gnome.org/GNOME/fractal/-/issues/847
 #Patch0:         fix-build-with-new-openssl3-openmandriva.patch
 
+BuildRequires:  appstream
 BuildRequires:  cargo
 BuildRequires:  gmp-devel
 BuildRequires:  meson
@@ -45,6 +46,7 @@ BuildRequires:  pkgconfig(gtk4)
 BuildRequires:  pkgconfig(gtksourceview-5)
 BuildRequires:  pkgconfig(libadwaita-1)
 BuildRequires:  pkgconfig(libhandy-1)
+BuildRequires:  pkgconfig(libsass)
 BuildRequires:  pkgconfig(libseccomp)
 BuildRequires:  pkgconfig(libsecret-1)
 BuildRequires:  pkgconfig(libwebp)
