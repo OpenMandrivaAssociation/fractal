@@ -17,7 +17,6 @@ Source1:        vendor.tar.xz
 # So let's force update few crates to latest that support openssl v3.
 # Issue: https://gitlab.gnome.org/GNOME/fractal/-/issues/847
 #Patch0:         fix-build-with-new-openssl3-openmandriva.patch
-Patch1:          use-sassc.patch
 
 BuildRequires:  appstream
 BuildRequires:  cargo
