@@ -23,7 +23,7 @@ BuildRequires:  cargo
 BuildRequires:  gmp-devel
 BuildRequires:  meson
 BuildRequires:  gettext
-BuildRequires:  grass
+BuildRequires:  sassc
 BuildRequires:  pkgconfig
 BuildRequires:  rust
 BuildRequires:  pkgconfig(atk) >= 2.4
