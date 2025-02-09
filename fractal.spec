@@ -23,6 +23,7 @@ BuildRequires:  cargo
 BuildRequires:  gmp-devel
 BuildRequires:  meson
 BuildRequires:  gettext
+BuildRequires:  grass
 BuildRequires:  pkgconfig
 BuildRequires:  rust
 BuildRequires:  pkgconfig(atk) >= 2.4
@@ -46,7 +47,6 @@ BuildRequires:  pkgconfig(gtk4)
 BuildRequires:  pkgconfig(gtksourceview-5)
 BuildRequires:  pkgconfig(libadwaita-1)
 BuildRequires:  pkgconfig(libhandy-1)
-BuildRequires:  pkgconfig(libsass)
 BuildRequires:  pkgconfig(libseccomp)
 BuildRequires:  pkgconfig(libsecret-1)
 BuildRequires:  pkgconfig(libwebp)
