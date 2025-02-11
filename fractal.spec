@@ -1,7 +1,7 @@
 %global tarball_version %%(echo %{version} | tr '~' '.')
 
 Name:           fractal
-Version:        10
+Version:        10.1
 Release:        1
 Summary:        GTK+ client for Matrix written in Rust
 License:        GPL-3.0
@@ -59,6 +59,9 @@ BuildRequires:  pkgconfig(shumate-1.0)
 BuildRequires:  pkgconfig(xdg-desktop-portal)
 BuildRequires:  cmake(LLVM)
 BuildRequires:	cmake(Clang)
+
+# for image loading
+Requires:  glycin-loaders
 
 %description
 Fractal is a Matrix messaging app for GNOME written in GTK+ and Rust. Its
