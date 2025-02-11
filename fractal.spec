@@ -1,7 +1,7 @@
 %global tarball_version %%(echo %{version} | tr '~' '.')
 
 Name:           fractal
-Version:        9
+Version:        10.1
 Release:        1
 Summary:        GTK+ client for Matrix written in Rust
 License:        GPL-3.0
@@ -18,10 +18,12 @@ Source1:        vendor.tar.xz
 # Issue: https://gitlab.gnome.org/GNOME/fractal/-/issues/847
 #Patch0:         fix-build-with-new-openssl3-openmandriva.patch
 
+BuildRequires:  appstream
 BuildRequires:  cargo
 BuildRequires:  gmp-devel
 BuildRequires:  meson
 BuildRequires:  gettext
+BuildRequires:  rust-grass
 BuildRequires:  pkgconfig
 BuildRequires:  rust
 BuildRequires:  pkgconfig(atk) >= 2.4
@@ -57,6 +59,9 @@ BuildRequires:  pkgconfig(shumate-1.0)
 BuildRequires:  pkgconfig(xdg-desktop-portal)
 BuildRequires:  cmake(LLVM)
 BuildRequires:	cmake(Clang)
+
+# for image loading
+Requires:  glycin-loaders
 
 %description
 Fractal is a Matrix messaging app for GNOME written in GTK+ and Rust. Its
