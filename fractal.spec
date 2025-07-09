@@ -1,7 +1,7 @@
 %global tarball_version %%(echo %{version} | tr '~' '.')
 
 Name:           fractal
-Version:        10.1
+Version:        12.beta
 Release:        1
 Summary:        GTK+ client for Matrix written in Rust
 License:        GPL-3.0
@@ -20,12 +20,14 @@ Source1:        vendor.tar.xz
 
 BuildRequires:  appstream
 BuildRequires:  cargo
+BuildRequires:  desktop-file-utils
 BuildRequires:  gmp-devel
 BuildRequires:  meson
 BuildRequires:  gettext
 BuildRequires:  rust-grass
 BuildRequires:  pkgconfig
 BuildRequires:  rust
+BuildRequires:  rust-packaging
 BuildRequires:  pkgconfig(atk) >= 2.4
 BuildRequires:  pkgconfig(cairo) >= 1.10
 BuildRequires:  pkgconfig(dbus-1)
@@ -70,6 +72,15 @@ free software projects.
 
 %prep
 %autosetup -p1 -a1
+%cargo_prep -v vendor
+
+cat >>.cargo/config <<EOF
+[source.crates-io]
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "vendor"
+EOF
 
 %build
 %meson
