@@ -20,6 +20,7 @@ Source1:        vendor.tar.xz
 
 BuildRequires:  appstream
 BuildRequires:  cargo
+BuildRequires:  desktop-file-utils
 BuildRequires:  gmp-devel
 BuildRequires:  meson
 BuildRequires:  gettext
