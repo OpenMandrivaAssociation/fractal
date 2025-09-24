@@ -1,7 +1,7 @@
 %global tarball_version %%(echo %{version} | tr '~' '.')
 
 Name:           fractal
-Version:        12.beta
+Version:        12.1
 Release:        1
 Summary:        GTK+ client for Matrix written in Rust
 License:        GPL-3.0
@@ -76,6 +76,16 @@ free software projects.
 
 cat >>.cargo/config <<EOF
 [source.crates-io]
+replace-with = "vendored-sources"
+
+[source."git+https://github.com/matrix-org/matrix-rust-sdk.git?rev=a9ce1c6e5822b8eb8411c5bc257049d9a9d15884"]
+git = "https://github.com/matrix-org/matrix-rust-sdk.git"
+rev = "a9ce1c6e5822b8eb8411c5bc257049d9a9d15884"
+replace-with = "vendored-sources"
+
+[source."git+https://github.com/ruma/ruma.git?rev=a2fe858133ba932b4bda730dc7472c9c985739a0"]
+git = "https://github.com/ruma/ruma.git"
+rev = "a2fe858133ba932b4bda730dc7472c9c985739a0"
 replace-with = "vendored-sources"
 
 [source.vendored-sources]
