@@ -39,6 +39,7 @@ BuildRequires:  pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(gspell-1) >= 1.8
 BuildRequires:  gstreamer1.0-plugins-base
+BuildRequires:  typelib(GstPlay)
 BuildRequires:  pkgconfig(gst-editing-services-1.0)
 BuildRequires:  pkgconfig(gstreamer-1.0)
 BuildRequires:  pkgconfig(gstreamer-audio-1.0)
