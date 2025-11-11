@@ -30,6 +30,7 @@ BuildRequires:  pkgconfig
 BuildRequires:  rust
 BuildRequires:  rust-packaging
 BuildRequires:  pkgconfig(atk) >= 2.4
+BuildRequires:  pkgconfig(blueprint-compiler)
 BuildRequires:  pkgconfig(cairo) >= 1.10
 BuildRequires:  pkgconfig(dbus-1)
 BuildRequires:  pkgconfig(gdk-3.0) >= 3.22
