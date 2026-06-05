@@ -2,7 +2,7 @@
 
 Name:           fractal
 Version:        12.1
-Release:        1.20251104
+Release:        1.20251105
 Summary:        GTK+ client for Matrix written in Rust
 License:        GPL-3.0
 Group:          Networking/Instant Messenger
