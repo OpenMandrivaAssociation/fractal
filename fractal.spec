@@ -1,14 +1,14 @@
 %global tarball_version %%(echo %{version} | tr '~' '.')
 
 Name:           fractal
-Version:        12.1
-Release:        1.20251105
+Version:        14
+Release:        1
 Summary:        GTK+ client for Matrix written in Rust
 License:        GPL-3.0
 Group:          Networking/Instant Messenger
 URL:            https://wiki.gnome.org/Apps/Fractal
-#Source0:        https://gitlab.gnome.org/GNOME/fractal/-/archive/%{version}/%{name}-%{version}.tar.bz2
-Source0:         fractal-main.tar.bz2
+Source0:        https://gitlab.gnome.org/GNOME/fractal/-/archive/%{version}/%{name}-%{version}.tar.bz2
+#Source0:         fractal-main.tar.bz2
 #Source0:        https://gitlab.gnome.org/World/fractal/-/releases/%{version}/downloads/tarball/fractal-%{version}.tar.xz
 # Use vendor. Fractal developers should decide - they shipping tarball with vendored crates or not, and not just like now one release without and another with again again...
 # Stop this madness. Also distributing rust packages and their dependencies is complete madness, and there is a need to provide vendor instead of linking to regular libraries like in any other civilized language. STOP THIS MADNESS
@@ -37,6 +37,7 @@ BuildRequires:  pkgconfig(gdk-3.0) >= 3.22
 BuildRequires:  pkgconfig(gdk-pixbuf-2.0) >= 2.30
 BuildRequires:  pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(glib-2.0)
+BuildRequires:	pkgconfig(glycin-2)
 BuildRequires:  pkgconfig(gspell-1) >= 1.8
 BuildRequires:  gstreamer1.0-plugins-base
 BuildRequires:  typelib(GstPlay)
@@ -75,21 +76,11 @@ interface is tuned for collaboration in large groups, such as
 free software projects.
 
 %prep
-%autosetup -n fractal-main -p1 -a1
+%autosetup -n fractal-%{version} -p1 -a1
 %cargo_prep -v vendor
 
 cat >>.cargo/config <<EOF
 [source.crates-io]
-replace-with = "vendored-sources"
-
-[source."git+https://github.com/matrix-org/matrix-rust-sdk.git?rev=c1bc814ac2c306da704c5e10b7feda2e207beb19"]
-git = "https://github.com/matrix-org/matrix-rust-sdk.git"
-rev = "c1bc814ac2c306da704c5e10b7feda2e207beb19"
-replace-with = "vendored-sources"
-
-[source."git+https://github.com/ruma/ruma.git?rev=c441eccb92a36467217ff929cd71462fbeeeaf1a"]
-git = "https://github.com/ruma/ruma.git"
-rev = "c441eccb92a36467217ff929cd71462fbeeeaf1a"
 replace-with = "vendored-sources"
 
 [source.vendored-sources]
