@@ -88,6 +88,9 @@ directory = "vendor"
 EOF
 
 %build
+# as of fractal 14.1, rust 1.97.1 and llvm 23.1.0-rc1.
+# Disable LTO because error rustc-LLVM ERROR: expected function definition _RNvCslvstGAdgBpu_7___rustc12___rust_alloc to have an associated value info.
+export RUSTFLAGS="-C lto=off"
 %meson
 %meson_build
 
