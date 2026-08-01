@@ -1,13 +1,13 @@
 %global tarball_version %%(echo %{version} | tr '~' '.')
 
 Name:           fractal
-Version:        14
+Version:        14.1
 Release:        1
 Summary:        GTK+ client for Matrix written in Rust
 License:        GPL-3.0
 Group:          Networking/Instant Messenger
 URL:            https://wiki.gnome.org/Apps/Fractal
-Source0:        https://gitlab.gnome.org/GNOME/fractal/-/archive/%{version}/%{name}-%{version}.tar.bz2
+Source0:        https://gitlab.gnome.org/World/fractal/-/archive/%{version}/%{name}-%{version}.tar.bz2
 #Source0:         fractal-main.tar.bz2
 #Source0:        https://gitlab.gnome.org/World/fractal/-/releases/%{version}/downloads/tarball/fractal-%{version}.tar.xz
 # Use vendor. Fractal developers should decide - they shipping tarball with vendored crates or not, and not just like now one release without and another with again again...
